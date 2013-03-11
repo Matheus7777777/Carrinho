@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+var posicaoVerticalElemento=0;
+var posicaoHorizontalElemento=0;
+function movimenta(pos,posicaoVertical,posicaoHorizontal){
+
+	if ((posicaoVerticalElemento>=0 && posicaoVerticalElemento<=160) && (posicaoVertical>=160 && posicaoVertical<=320) && (pos>5 && pos<=9)){
+		$('#Andando').animate({'top':'160','left':'100'},300).removeClass('Comeco').addClass('Direita').animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+	posicaoVerticalElemento=posicaoVertical;
+	
+	} else if ((posicaoVerticalElemento>=0 && posicaoVerticalElemento<=160) && (posicaoVertical>=0 && posicaoVertical<=160) && (pos>=1 && pos<=5)){
+				
+		$('#Andando').animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else if ((posicaoVerticalElemento>160 && posicaoVerticalElemento<=320) && (posicaoVertical>=160 && posicaoVertical<=320) && (pos>=5 && pos<=9)){
+		
+		$('#Andando').addClass('Esquerda').animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		
+	posicaoVerticalElemento=posicaoVertical;
+	
+	} else if ((posicaoVerticalElemento>160 && posicaoVerticalElemento<=320) && (posicaoVertical>=0 && posicaoVertical<=160) && (pos>=1 && pos<=5)){
+		
+		$('#Andando').animate({'top':'160','left':'100'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		
+	posicaoVerticalElemento=posicaoVertical;
+	
+	} else if ((posicaoVerticalElemento>=0 && posicaoVerticalElemento<=160) && (posicaoVertical>=320 && posicaoVertical<=400) && (pos>=9 && pos<=11)){
+		$('#Andando').removeClass('Direita').addClass('Esquerda').animate({'top':'160','left':'100'},300).animate({'top':'320','left':'20'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		
+	posicaoVerticalElemento=posicaoVertical;
+	
+	} else if ((posicaoVerticalElemento>=320 && posicaoVerticalElemento<400) && (posicaoVertical>=0 && posicaoVertical<=160) && (pos>=1 && pos<=5)){
+
+		$('#Andando').animate({'top':'320','left':'20'},300).animate({'top':'160','left':'100'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		
+	posicaoVerticalElemento=posicaoVertical;
+	
+	} else if ((posicaoVerticalElemento>=160 && posicaoVerticalElemento<=320) && (posicaoVertical>=320 && posicaoVertical<=400) && (pos>=9 && pos<=11)){
+			
+		$('#Andando').removeClass('Direita').addClass('Esquerda').animate({'top':'320','left':'20'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		
+	posicaoVerticalElemento=posicaoVertical;
+	
+	} else if ((posicaoVerticalElemento>=320 && posicaoVerticalElemento<400) && (posicaoVertical>=160 && posicaoVertical<=320) && (pos>=5 && pos<=9)){
+
+		$('#Andando').animate({'top':'320','left':'20'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else if ((posicaoVerticalElemento>=320 && posicaoVerticalElemento<400) && (posicaoVertical>=320 && posicaoVertical<=400) && (pos>=9 && pos<=11)){
+
+		$('#Andando').animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else if ((posicaoVerticalElemento>=0 && posicaoVerticalElemento<=160) && (posicaoVertical>=400 && posicaoVertical<=500) && (pos>=11 && pos<=22)){
+		
+		$('#Andando').removeClass('Comeco').addClass('Direita').animate({'top':'160','left':'100'},function(){$('#Andando').removeClass('Direita').addClass('Esquerda').animate({'top':'320','left':'20'},function(){$('#Andando').removeClass('Direita').addClass('RetaDireitaVirandoTudo').animate({'top':'400','left':'60'},function(){$('#Andando').animate({'top':posicaoVertical,'left':posicaoHorizontal},300);});});});
+posicaoHorizontalElemento=posicaoHorizontal;
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else if ((posicaoVerticalElemento>=400 && posicaoVerticalElemento<=500) && (posicaoVertical>=0 && posicaoVertical<=160) && (pos>=0 && pos<=5)){
+
+		$('#Andando').animate({'top':'400','left':'60'},300).animate({'top':'320','left':'20'},300).animate({'top':'160','left':'100'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		posicaoHorizontalElemento=0;
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else if ((posicaoVerticalElemento>=160 && posicaoVerticalElemento<=320) && (posicaoVertical>=400 && posicaoVertical<=500) && (pos>=11 && pos<=22)){
+
+			$('#Andando').animate({'top':'320','left':'20'},300).animate({'top':'400','left':'60'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		posicaoHorizontalElemento=posicaoHorizontal;
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else if ((posicaoVerticalElemento>=400 && posicaoVerticalElemento<=500) && (posicaoVertical>=160 && posicaoVertical<=320) && (pos>=5 && pos<=9)){
+
+			$('#Andando').animate({'top':'400','left':'60'},300).animate({'top':'320','left':'20'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		posicaoHorizontalElemento=0;
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else if ((posicaoVerticalElemento>=400 && posicaoVerticalElemento<=500) && (posicaoVertical>=320 && posicaoVertical<=400) && (pos>=9 && pos<=11)){
+
+			$('#Andando').animate({'top':'400','left':'60'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		posicaoHorizontalElemento=0;
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else if ((posicaoVerticalElemento>=320 && posicaoVerticalElemento<=400 && posicaoHorizontalElemento==0) && (posicaoVertical>=400 && posicaoVertical<=500) && (pos>=11 && pos<=22)){
+		
+			$('#Andando').removeClass('Esquerda').addClass('RetaDireita').animate({'top':'400','left':'60'},300).animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		posicaoHorizontalElemento=posicaoHorizontal;
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else if ((posicaoVerticalElemento>=400 && posicaoVerticalElemento<=500 && posicaoHorizontalElemento!=0) && (posicaoVertical>=400 && posicaoVertical<=500) && (pos>=11 && pos<=22)){
+			$('#Andando').animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+		posicaoHorizontalElemento=posicaoHorizontal;
+	posicaoVerticalElemento=posicaoVertical;
+	
+	}else{
+	
+	/* $('#Andando').animate({'top':posicaoVertical,'left':posicaoHorizontal},300);
+	posicaoVerticalElemento=posicaoVertical; */
+	
+	}
+}
+
+
+</script>
+<style>
+body{background:url(quadrado.png) repeat;}
+#Andando{width:20px; height:40px; position:absolute;z-index:999; top:-10px; left:20px; border-radius:10px;}
+.formas{width:20px; height:20px; background:#333;}
+#posicao1{ position:relative; top:0px; left:20px;}
+#posicao2{ position:relative; top:20px; left:40px;}
+#posicao3{ position:relative; top:40px; left:60px;}
+#posicao4{ position:relative; top:60px; left:80px;}
+#posicao5{ position:relative; top:80px; left:100px;}
+#posicao6{ position:relative; top:100px; left:80px;}
+#posicao7{ position:relative; top:120px; left:60px;}
+#posicao8{ position:relative; top:140px; left:40px;}
+#posicao9{ position:relative; top:160px; left:20px;}
+#posicao10{ position:relative; top:180px; left:40px;}
+#posicao11{ position:relative; top:200px; left:60px; float:left;}
+#posicao12{ position:relative; top:200px; left:80px; float:left;}
+#posicao13{ position:relative; top:200px;  left:100px; float:left;}
+#posicao14{ position:relative; top:200px; left:120px;  float:left;}
+#posicao15{ position:relative; top:200px; left:140px; float:left;}
+#posicao16{ position:relative; top:200px; left:160px; float:left;}
+#posicao17{ position:relative; top:200px; left:180px;  float:left;}
+#posicao18{ position:relative; top:200px; left:200px;  float:left;}
+#posicao19{ position:relative; top:200px; left:220px;  float:left;}
+#posicao20{ position:relative; top:200px; left:240px;  float:left;}
+#posicao21{ position:relative; top:200px; left:260px;  float:left;}
+#posicao22{ position:relative; top:200px; left:280px;  float:left;}
+.EnvolveTudo{width:1000px; height:2000px; margin:0 auto; position:relative; top:100px;}
+
+.Comeco{transform: rotate(-30deg);
+-ms-transform: rotate(-30deg); /* IE 9 */
+-webkit-transform: rotate(-30deg); /* Safari and Chrome */
+-o-transform: rotate(-30deg); /* Opera */
+-moz-transform: rotate(-30deg); /* Firefox */}
+
+
+.Direita{
+transform: rotate(35deg);
+-ms-transform: rotate(35deg); /* IE 9 */
+-webkit-transform: rotate(35deg); /* Safari and Chrome */
+-o-transform: rotate(35deg); /* Opera */
+-moz-transform: rotate(35deg); /* Firefox */
+-moz-transition:width 2s, height 2s, -moz-transform 1s; /* Firefox 4 */
+-webkit-transition:width 2s, height 2s, -webkit-transform 1s; /* Safari and Chrome */
+-o-transition:width 2s, height 2s, -o-transform 1s; /* Opera */
+}
+
+
+.Esquerda{
+transform: rotate(-30deg);
+-ms-transform: rotate(-30deg); /* IE 9 */
+-webkit-transform: rotate(-30deg); /* Safari and Chrome */
+-o-transform: rotate(-30deg); /* Opera */
+-moz-transform: rotate(-30deg); /* Firefox */
+-moz-transition:width 2s, height 2s, -moz-transform 1s; /* Firefox 4 */
+-webkit-transition:width 2s, height 2s, -webkit-transform 1s; /* Safari and Chrome */
+-o-transition:width 2s, height 2s, -o-transform 1s; /* Opera */
+}
+
+
+
+.RetaDireita{
+transform: rotate(-90deg);
+-ms-transform: rotate(-90deg); /* IE 9 */
+-webkit-transform: rotate(-90deg); /* Safari and Chrome */
+-o-transform: rotate(-90deg); /* Opera */
+-moz-transform: rotate(-90deg); /* Firefox */
+-moz-transition:width 0.1s, height 0.1s, -moz-transform 0.1s; /* Firefox 4 */
+-webkit-transition:width 0.1s, height 0.1s, -webkit-transform 0.1s; /* Safari and Chrome */
+-o-transition:width 0.1s, height 0.1s, -o-transform 0.1s; /* Opera */
+}
+
+
+.RetaDireitaVirandoTudo{
+transform: rotate(-90deg);
+-ms-transform: rotate(-90deg); /* IE 9 */
+-webkit-transform: rotate(-90deg); /* Safari and Chrome */
+-o-transform: rotate(-90deg); /* Opera */
+-moz-transform: rotate(-90deg); /* Firefox */
+-moz-transition:width 0.1s, height 0.1s, -moz-transform 0.1s; /* Firefox 4 */
+-webkit-transition:width 0.1s, height 0.1s, -webkit-transform 0.1s; /* Safari and Chrome */
+-o-transition:width 0.1s, height 0.1s, -o-transform 0.1s; /* Opera */
+}
+
+.Retorno{
+transform: rotate(-210deg);
+-ms-transform: rotate(-210deg); /* IE 9 */
+-webkit-transform: rotate(-210deg); /* Safari and Chrome */
+-o-transform: rotate(-210deg); /* Opera */
+-moz-transform: rotate(-210deg); /* Firefox */
+-moz-transition:width 1s, height 1s, -moz-transform 1s; /* Firefox 4 */
+-webkit-transition:width 1s, height 1s, -webkit-transform 1s; /* Safari and Chrome */
+-o-transition:width 1s, height 1s, -o-transform 1s; /* Opera */
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="EnvolveTudo">
+<div id="Andando" class="Comeco"><img src="carro.png" border="0" /></div>
+<div id="posicao1" class="formas" onclick="movimenta(1,0,20);"></div>
+<div id="posicao2" class="formas" onclick="movimenta(2,40,40);"></div>
+<div id="posicao3" class="formas" onclick="movimenta(3,80,60);"></div>
+<div id="posicao4" class="formas" onclick="movimenta(4,120,80);"></div>
+<div id="posicao5" class="formas" onclick="movimenta(5,160,100);"></div>
+<div id="posicao6" class="formas" onclick="movimenta(6,200,80);"></div>
+<div id="posicao7" class="formas" onclick="movimenta(7,240,60);"></div>
+<div id="posicao8" class="formas" onclick="movimenta(8,280,40);"></div>
+<div id="posicao9" class="formas" onclick="movimenta(9,320,20);"></div>
+<div id="posicao10" class="formas" onclick="movimenta(10,360,40);"></div>
+<div id="posicao11" class="formas" onclick="movimenta(11,400,60);"></div>
+<div id="posicao12" class="formas" onclick="movimenta(12,400,100);"></div>
+<div id="posicao13" class="formas" onclick="movimenta(13,400,140);"></div>
+<div id="posicao14" class="formas" onclick="movimenta(14,400,180);"></div>
+<div id="posicao15" class="formas" onclick="movimenta(15,400,220);"></div>
+<div id="posicao16" class="formas" onclick="movimenta(16,400,260);"></div>
+<div id="posicao17" class="formas" onclick="movimenta(17,400,300);"></div>
+<div id="posicao18" class="formas" onclick="movimenta(18,400,340);"></div>
+<div id="posicao19" class="formas" onclick="movimenta(19,400,380);"></div>
+<div id="posicao20" class="formas" onclick="movimenta(20,400,420);"></div>
+<div id="posicao21" class="formas" onclick="movimenta(21,400,460);"></div>
+<div id="posicao22" class="formas" onclick="movimenta(22,400,500);"></div>
+</div>
+</body>
+</html>

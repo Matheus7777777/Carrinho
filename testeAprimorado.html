@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+var posicaoVerticalElemento=0;
+var posicaoHorizontalElemento=0;
+
+
+
+function movimenta(pos,posicaoVertical,posicaoHorizontal){
+	
+	window.scrollBy(0,200);	
+	
+		$('#Andando').animate({'top':'180','left':'300'},1000).removeClass('Comeco').addClass('Direita').animate({'top':'508','left':'268'},2000, function(){$('#Andando').removeClass('Direita').addClass('Esquerda').animate({'left':'20','top':'720'},2000, function(){$('#Andando').removeClass('Direita').addClass('Esquerda').animate({'top':'1000','left':'260'},2000,function(){$('#Andando').removeClass('Esquerda').addClass('Final').animate({'top':posicaoVertical,'left':posicaoHorizontal},2000);});});});
+		
+	posicaoVerticalElemento=posicaoVertical;	
+	
+
+}
+
+</script>
+<style>
+body{background:url(quadrado.png) repeat;}
+#Andando{width:20px; height:40px; position:absolute;z-index:999; top:20px; left:5px; border-radius:10px;}
+.formas{width:20px; height:20px; background:#333;}
+#posicao1{ position:relative; top:0px; left:20px;}
+#posicao2-1{ position:relative; top:130px; left:600px;}
+#posicao2{ position:relative; top:520px; left:260px;}
+#posicao3-2{ position:relative; top:880px; left:260px;}
+#posicao3-CurcaFechada{position:relative; left:260px; top:1000px}
+#posicao3-1{ position:relative; top:760px; left:0px;}
+#posicao3{ position:relative; top:1000px; left:600px;}
+.EnvolveTudo{width:1000px; height:2000px; margin:0 auto; position:relative; top:100px;}
+
+.Comeco{transform: rotate(-64deg);
+-ms-transform: rotate(-64deg); /* IE 9 */
+-webkit-transform: rotate(-64deg); /* Safari and Chrome */
+-o-transform: rotate(-64deg); /* Opera */
+-moz-transform: rotate(-64deg); /* Firefox */}
+
+
+.Direita{
+transform: rotate(30deg);
+-ms-transform: rotate(30deg); /* IE 9 */
+-webkit-transform: rotate(30deg); /* Safari and Chrome */
+-o-transform: rotate(30deg); /* Opera */
+-moz-transform: rotate(30deg); /* Firefox */
+-moz-transition:width 2s, height 2s, -moz-transform 5s; /* Firefox 4 */
+-webkit-transition:width 2s, height 2s, -webkit-transform 5s; /* Safari and Chrome */
+-o-transition:width 2s, height 2s, -o-transform 5s; /* Opera */
+}
+
+
+.Esquerda{
+transform: rotate(-64deg);
+-ms-transform: rotate(-64deg); /* IE 9 */
+-webkit-transform: rotate(-64deg); /* Safari and Chrome */
+-o-transform: rotate(-64deg); /* Opera */
+-moz-transform: rotate(-64deg); /* Firefox */
+-moz-transition:width 2s, height 2s, -moz-transform 10s; /* Firefox 4 */
+-webkit-transition:width 2s, height 2s, -webkit-transform 10s; /* Safari and Chrome */
+-o-transition:width 2s, height 2s, -o-transform 10s; /* Opera */
+}
+
+
+.Final{
+transform: rotate(-115deg);
+-ms-transform: rotate(-115deg); /* IE 9 */
+-webkit-transform: rotate(-115deg); /* Safari and Chrome */
+-o-transform: rotate(-115deg); /* Opera */
+-moz-transform: rotate(-115deg); /* Firefox */
+-moz-transition:width 2s, height 2s, -moz-transform 4s; /* Firefox 4 */
+-webkit-transition:width 2s, height 2s, -webkit-transform 4s; /* Safari and Chrome */
+-o-transition:width 2s, height 2s, -o-transform 4s; /* Opera */
+}
+
+.Navegando{width:300px; position:fixed;}
+
+</style>
+</head>
+
+<body>
+<div class="Navegando">
+<div class="Parada1" onclick="movimenta(2,1060,600);descendo();">Parada1</div>
+</div>
+<div class="EnvolveTudo">
+<div id="Andando" class="Comeco"><img src="carro.png" border="0" /></div>
+<div id="posicao2-1" class="formas"></div>
+<div id="posicao1" class="formas"></div>
+<div id="posicao2" class="formas"></div>
+<div id="posicao3-1" class="formas"></div>
+<div id="posicao3-CurcaFechada" class="formas"></div>
+<div id="posicao3" class="formas"></div>
+</div>
+</body>
+</html>
